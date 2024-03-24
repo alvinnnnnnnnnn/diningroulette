@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Eatery Picker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Find a Place to Eat</h1>
+  <select id="type">
+    <option value="">Select Type</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Cafe">Cafe</option>
+  </select>
+  
+  <select id="cuisines">
+    <option value="">Select Cuisine</option>
+    <option value="Chinese">Chinese</option>
+    <option value="Japanese">Japanese</option>
+  </select>
+  
+  <select id="location">
+    <option value="">Select Location</option>
+    <option value="Tanjong Pagar">Tanjong Pagar</option>
+    <option value="Sentosa">Sentosa</option>
+  </select>
+  
+  <button id="findButton">Let's Go!</button>
+  
+  <div id="result"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
