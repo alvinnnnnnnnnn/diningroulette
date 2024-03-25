@@ -1,7 +1,8 @@
 const places = [
-    { type: "Restaurant", cuisines: "Chinese", location: "Tanjong Pagar", name: "Chengdu Bowl"},
-    { type: "Restaurant", cuisines: "Korean", location: "Tanjong Pagar", name: "Noodle Star K"},
-    { type: "Cafe", cuisines: "Japanese", location: "Tanjong Pagar", name: "Acoustics Coffee Bar"}
+    { type: "Restaurant", cuisines: "Chinese", location: "Tanjong Pagar", name: "Chengdu Bowl" },
+    { type: "Restaurant", cuisines: "Korean", location: "Tanjong Pagar", name: "Noodle Star K" },
+    { type: "Cafe", cuisines: "nil", location: "Tanjong Pagar", name: "Acoustics Coffee Bar" },
+    { type: "Bar", cuisines: "Irish", location: "Raffles Place", name: "Molly Malones" }
     // Add more places as needed, with multiple cuisines where applicable
 ];
 
@@ -20,9 +21,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (filteredPlaces.length > 0) {
             const randomIndex = Math.floor(Math.random() * filteredPlaces.length);
             const place = filteredPlaces[randomIndex];
-            document.getElementById('result').textContent = `How about ${place.name}, which is a ${place.type} offering ${place.cuisines} cuisine in ${place.location}?`;
+            
+            // Construct query parameters
+            const queryParams = new URLSearchParams({
+                name: place.name,
+                type: place.type,
+                cuisines: place.cuisines.join(', '), // Join array into a string
+                location: place.location,
+                halalCertified: place.halalCertified
+            }).toString();
+            
+            // Redirect to display.html with query parameters
+            window.location.href = `display.html?${queryParams}`;
         } else {
-            document.getElementById('result').textContent = "No places found with the selected filters. Try different options!";
+            alert("No places found with the selected filters. Try different options!");
         }
     });
 });
