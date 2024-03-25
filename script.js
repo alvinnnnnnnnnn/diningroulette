@@ -26,11 +26,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const queryParams = new URLSearchParams({
                 name: place.name,
                 type: place.type,
-                cuisines: place.cuisines, // Join array into a string
+                cuisines: place.cuisines,
                 location: place.location
             }).toString();
             
             // Redirect to display.html with query parameters
+            
             window.location.href = `display.html?${queryParams}`;
         } else {
             alert("No places found with the selected filters. Try different options!");
