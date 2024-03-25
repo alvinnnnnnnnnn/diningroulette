@@ -26,9 +26,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const queryParams = new URLSearchParams({
                 name: place.name,
                 type: place.type,
-                cuisines: place.cuisines.join(', '), // Join array into a string
-                location: place.location,
-                halalCertified: place.halalCertified
+                cuisines: place.cuisines, // Join array into a string
+                location: place.location
             }).toString();
             
             // Redirect to display.html with query parameters
