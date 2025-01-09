@@ -1,0 +1,6 @@
+train: C:\Users\admin\Documents\alvinw\AVATAR\yolov8_od\train
+val: C:\Users\admin\Documents\alvinw\AVATAR\yolov8_od\test
+
+nc: 2
+
+names: ["lviv_open", "wfl_open"]
